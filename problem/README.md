@@ -26,7 +26,7 @@ This mathematical problem asks us to:
 
 The final answer should be a single number: 233168
 
-```
+```python
 # Find the sum of all multiples of 3 or 5 below 1000
 sum_multiples = 0
 for i in range(1000):
@@ -37,7 +37,7 @@ print(sum_multiples)
 
 OR
 
-```
+```python
 # Find the sum of all multiples of 3 or 5 below 1000
 sum_multiples = sum([i for i in range(1000) if i % 3 == 0 or i % 5 == 0])
 print(sum_multiples)
@@ -70,4 +70,56 @@ This problem requires us to:
 - Select only even numbers
 - Calculate their sum and print it
 
-The solution requires writing code that efficiently generates Fibonacci numbers while tracking and summing only the even values.
+```python
+# Function to find sum of even Fibonacci numbers up to 4 million
+def even_fibonacci_sum(limit):
+    # Initialize first two Fibonacci numbers
+    a, b = 1, 2
+    # Initialize sum to store even Fibonacci numbers
+    total = 0
+    
+    # Continue loop until we reach the limit
+    while a <= limit:
+        # If current Fibonacci number is even, add it to total
+        if a % 2 == 0:
+            total += a
+        
+        # Generate next Fibonacci number
+        # Store current 'b' in temp variable to calculate next number
+        temp = b
+        b = a + b  # Next number is sum of previous two
+        a = temp   # Move 'b' to 'a' for next iteration
+    
+    return total
+
+# Set limit to 4 million as per problem requirement
+limit = int(input("Please enter the limit e.g. 4000000: "))
+# Call function and print result
+result = even_fibonacci_sum(limit)
+print(f"Sum of even Fibonacci numbers not exceeding {limit}: {result}")
+```
+
+
+# Problem 3: Largest Prime Factor
+
+## Question
+The prime factors of 13195 are 5, 7, 13 and 29.
+What is the largest prime factor of the number 600851475143?
+
+## Explanation
+This problem requires us to:
+
+1. **Understand Prime Factors**
+- Prime factors are prime numbers that divide a number exactly
+- Example demonstrated: 13195 = 5 × 7 × 13 × 29
+- All these factors (5, 7, 13, 29) are prime numbers
+
+2. **Main Task**
+- Find all prime factors of 600851475143
+- Identify the largest one among them
+- The number is very large, requiring efficient computation
+
+3. **Expected Output**
+- A single number representing the largest prime factor
+- Must be a prime number
+- Will be the biggest among all prime factors
