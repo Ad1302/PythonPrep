@@ -43,6 +43,8 @@ sum_multiples = sum([i for i in range(1000) if i % 3 == 0 or i % 5 == 0])
 print(sum_multiples)
 ```
 
+---
+
 # Problem 2: Even Fibonacci Numbers
 
 ## Question
@@ -99,6 +101,7 @@ result = even_fibonacci_sum(limit)
 print(f"Sum of even Fibonacci numbers not exceeding {limit}: {result}")
 ```
 
+---
 
 # Problem 3: Largest Prime Factor
 
@@ -123,3 +126,82 @@ This problem requires us to:
 - A single number representing the largest prime factor
 - Must be a prime number
 - Will be the biggest among all prime factors
+
+
+---
+
+# Problem 4: Largest Palindrome Product
+
+## Question
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+## Explanation
+
+1. **Understanding Palindromes**
+- A palindrome reads the same forwards and backwards (like 9009)
+- Example given: 9009 is palindrome (largest from 2-digit numbers)
+- It's the product of 91 and 99
+
+2. **Main Task**
+- Find products of all 3-digit numbers (100 to 999)
+- Check which products are palindromes
+- Find the largest among these palindromes
+
+3. **Expected Output**
+- A single number that is:
+  - A palindrome
+  - Product of two 3-digit numbers
+  - The largest such palindrome
+
+
+### What is a palindrome?
+A **palindrome** is a number (or word) that reads the same forwards and backwards. For example:
+- 121 is a palindrome because if you read it from left to right or right to left, it’s the same number.
+- 9009 is also a palindrome because if you reverse the digits, you still get 9009.
+
+### The problem:
+The task is to **find the largest palindromic number** that is the **product of two 3-digit numbers**. A 3-digit number is any number between 100 and 999 (like 100, 999, etc.).
+
+For example, if you multiply two 3-digit numbers:
+- \( 91 \times 99 = 9009 \)
+9009 is a palindrome, and in the original problem, this was the largest palindrome from the product of two 2-digit numbers.
+
+Now, we want to find the largest palindrome that is the product of two **3-digit numbers**.
+
+### Breakdown of the steps to solve the problem:
+
+1. **Multiply two 3-digit numbers**:
+   - You will need to consider all combinations of two 3-digit numbers. The numbers go from 100 to 999.
+   - So, you are multiplying numbers like \( 100 \times 100 \), \( 100 \times 101 \), \( 100 \times 102 \), and so on, up to \( 999 \times 999 \).
+   
+2. **Check if the product is a palindrome**:
+   - After each multiplication, you check if the result is a palindrome. For example, if the result of multiplying two numbers is 9009, you check if 9009 reads the same forwards and backwards (it does, so it’s a palindrome).
+   
+3. **Keep track of the largest palindrome**:
+   - While checking each product, you want to **keep track of the largest palindrome** you've found. If a new palindrome is larger than the previous largest one, update it.
+   
+4. **Stop when you've found all products**:
+   - You'll eventually check all possible products of 3-digit numbers (from 100 to 999) and find the largest palindrome.
+
+### Example to clarify:
+Let’s work through an example manually to understand better:
+- Consider two 3-digit numbers: 101 and 102.
+- Multiply them:  
+  \[
+  101 \times 102 = 10302
+  \]
+- Check if 10302 is a palindrome: It’s **not**, because if you reverse the digits, you get 20301, which is not the same.
+  
+Let’s try another one:
+- Take 101 and 103.
+- Multiply them:  
+  \[
+  101 \times 103 = 10403
+  \]
+- Check if 10403 is a palindrome: It’s **not**, because reversing 10403 gives 30401, which is not the same.
+
+You would continue doing this for all pairs of 3-digit numbers, and eventually, you’d find the largest palindrome, which, as the problem suggests, turns out to be **906609** (from \( 913 \times 993 \)).
+
+### Final answer:
+After running the code, the largest palindrome product of two 3-digit numbers is **906609**.
