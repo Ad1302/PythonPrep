@@ -131,16 +131,20 @@ This problem requires us to:
 
 ```python
 def largest_prime_factor(n):
-    # Start dividing by smallest prime number
+    # Start with the smallest prime number
     i = 2
+
+    # Keep dividing n by smaller numbers until i^2 > n
     while i * i <= n:
-        if n % i:
-            i += 1
-        else:
-            n //= i
+        if n % i:  # If n is not divisible by i
+            i += 1  # Move to the next number
+        else:  # If n is divisible by i
+            n //= i  # Divide n by i and continue
+
+    # If n is still greater than 1, it's the largest prime factor
     return n if n > 1 else i
 
-# Test the function
+# Test the function with a large number
 number = 600851475143
 result = largest_prime_factor(number)
 print(f"Largest prime factor of {number} is: {result}")
