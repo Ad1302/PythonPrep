@@ -150,6 +150,47 @@ result = largest_prime_factor(number)
 print(f"Largest prime factor of {number} is: {result}")
 ```
 
+### Step-by-Step Explanation:
+
+1. **Initialize `i = 2`**:
+   - Start with 2, the smallest prime number, to begin the factorization process.
+
+2. **While loop**:
+   - Continue the loop as long as \( i^2 \leq n \). This ensures we don't check unnecessary numbers.
+
+3. **If `n % i`**:
+   - If \( n \% i \neq 0 \), \( i \) is not a factor of \( n \), so increment \( i \) to check the next number.
+
+4. **Else (`n % i == 0`)**:
+   - If \( i \) divides \( n \), it's a factor.
+   - Divide \( n \) by \( i \) using integer division (\( n = n // i \)) and repeat the process with the same \( i \), since \( n \) might still have more factors of \( i \).
+
+5. **Final Result**:
+   - When \( i^2 > n \), if \( n > 1 \), \( n \) itself is the largest prime factor.
+   - If \( n = 1 \), \( i \) is the largest prime factor found during the loop.
+
+---
+
+### Example Walkthrough (for \( n = 13195 \)):
+
+1. Start with \( n = 13195 \), \( i = 2 \):
+   - \( 13195 \% 2 \neq 0 \), increment \( i \) to 3.
+2. \( i = 3 \):
+   - \( 13195 \% 3 \neq 0 \), increment \( i \) to 4.
+3. \( i = 5 \):
+   - \( 13195 \% 5 = 0 \), divide \( 13195 \) by 5: \( n = 2639 \).
+4. Continue with \( i = 5 \):
+   - \( 2639 \% 5 \neq 0 \), increment \( i \) to 6, 7, and so on.
+5. \( i = 7 \):
+   - \( 2639 \% 7 = 0 \), divide \( 2639 \) by 7: \( n = 377 \).
+6. Continue dividing by factors (e.g., \( i = 13 \)), until \( n = 29 \).
+7. Since \( 29 \) is prime and \( i^2 > n \), \( 29 \) is the largest prime factor.
+
+---
+
+### Output for \( 600851475143 \):
+The largest prime factor of \( 600851475143 \) is **6857**.
+
 ### Solution 2
 
 ```python
