@@ -296,3 +296,43 @@ You would continue doing this for all pairs of 3-digit numbers, and eventually, 
 
 ### Final answer:
 After running the code, the largest palindrome product of two 3-digit numbers is **906609**.
+
+### Solution 1
+
+```python
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
+
+def find_largest_palindrome_simple():
+    largest = 0
+    # Check all combinations of 3-digit numbers
+    for i in range(100, 1000):
+        for j in range(100, 1000):
+            product = i * j
+            if is_palindrome(product) and product > largest:
+                largest = product
+    return largest
+
+print(find_largest_palindrome_simple())
+```
+
+### Solution 2
+
+```python
+def find_largest_palindrome_optimized():
+    largest = 0
+    # Start from largest numbers for efficiency
+    for i in range(999, 99, -1):
+        # Start j from i to avoid duplicate calculations
+        for j in range(i, 99, -1):
+            product = i * j
+            # Break inner loop if product becomes smaller than largest
+            if product <= largest:
+                break
+            # Check palindrome
+            if str(product) == str(product)[::-1]:
+                largest = product
+    return largest
+
+print(find_largest_palindrome_optimized())
+```
