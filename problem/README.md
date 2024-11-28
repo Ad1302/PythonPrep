@@ -127,7 +127,53 @@ This problem requires us to:
 - Must be a prime number
 - Will be the biggest among all prime factors
 
+### Solution 1
 
+```python
+def largest_prime_factor(n):
+    # Start dividing by smallest prime number
+    i = 2
+    while i * i <= n:
+        if n % i:
+            i += 1
+        else:
+            n //= i
+    return n if n > 1 else i
+
+# Test the function
+number = 600851475143
+result = largest_prime_factor(number)
+print(f"Largest prime factor of {number} is: {result}")
+```
+
+### Solution 2
+
+```python
+def largest_prime_factor_optimized(n):
+    largest_factor = 1
+    
+    # Handle all even factors first
+    while n % 2 == 0:
+        largest_factor = 2
+        n = n // 2
+    
+    # Check only odd numbers up to square root
+    for i in range(3, int(n ** 0.5) + 1, 2):
+        while n % i == 0:
+            largest_factor = i
+            n = n // i
+    
+    # If n is still greater than 2, it's prime
+    if n > 2:
+        largest_factor = n
+        
+    return largest_factor
+
+# Test the function
+number = 600851475143
+result = largest_prime_factor_optimized(number)
+print(f"Largest prime factor of {number} is: {result}")
+```
 ---
 
 # Problem 4: Largest Palindrome Product
