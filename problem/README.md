@@ -361,3 +361,21 @@ What is the smallest positive number that is evenly divisible by all of the numb
 - Must be evenly divisible by all numbers 1-20
 - Must be the smallest such number
 
+### Solution 1:
+
+```python
+def is_divisible_by_all(n, max_divisor):
+    for i in range(1, max_divisor + 1):
+        if n % i != 0:
+            return False
+    return True
+
+def find_smallest_multiple_simple():
+    n = 1
+    while True:
+        if is_divisible_by_all(n, 20):
+            return n
+        n += 1
+
+print(find_smallest_multiple_simple())
+```
