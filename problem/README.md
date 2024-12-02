@@ -336,3 +336,28 @@ def find_largest_palindrome_optimized():
 
 print(find_largest_palindrome_optimized())
 ```
+---
+
+# Problem 5: Smallest Multiple
+
+## Question
+2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+## Explanation
+
+1. **Understanding the Problem**
+- We need to find the least common multiple (LCM) of numbers 1 through 20
+- Example given: 2520 is LCM of numbers 1 through 10
+- The number must divide evenly (no remainder) by ALL numbers 1-20
+
+2. **Main Task**
+- Find a number that is divisible by all numbers from 1 to 20
+- Must be the smallest such number
+- Must give remainder 0 when divided by any number from 1 to 20
+
+3. **Expected Output**
+- A single positive integer
+- Must be evenly divisible by all numbers 1-20
+- Must be the smallest such number
+
