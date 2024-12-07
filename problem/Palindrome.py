@@ -1,24 +1,30 @@
 number = ""
 
-def reverser(i,j,num):
+def reverser(num):
     number = str(num)
     list = []
-    print(type(num))
-    print(type(number))
     for i in range(len(number)):
         list.append(number[i])
-    print(list)
     list.reverse()
-    print(list)
-    string = ""
+    string_a = ""
     for j in list:
-        string += j
-    print(string)
+        string_a+= j
+    return int(string_a)
 Palindromic_list =[]
 
-for i in range(100,1000):
-    for j in range(100,1000):
+for i in range(999,99,-1):
+    for j in range(999,99,-1):
         num = i*j
-        reverser(num,i,j)
-        if num == int(string):
+        opp = reverser(num)
+        if num == opp:
             Palindromic_list.append(num)
+print(Palindromic_list)
+
+def largest(Palindromic_list):
+    Largest = Palindromic_list[0]
+    for i in range(len(Palindromic_list)):
+        if Palindromic_list[i]> Largest:
+            Largest = Palindromic_list[i]
+    return Largest
+print(largest(Palindromic_list))
+#906609 913*993
