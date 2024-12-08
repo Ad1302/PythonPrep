@@ -399,3 +399,32 @@ def find_smallest_multiple_optimized():
 
 print(find_smallest_multiple_optimized())
 ```
+---
+
+# Problem 6: Sum Square Difference
+
+## Question
+The sum of the squares of the first ten natural numbers is 1² + 2² + ... + 10² = 385.
+The square of the sum of the first ten natural numbers is (1 + 2 + ... + 10)² = 55² = 3025.
+Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+## Explanation
+
+1. **Understanding the Components**
+- First calculation: Sum of squares (1² + 2² + ... + n²)
+- Second calculation: Square of sum ((1 + 2 + ... + n)²)
+- Example with n=10:
+  - Sum of squares = 385
+  - Square of sum = 3025
+  - Difference = 3025 - 385 = 2640
+
+2. **Main Task**
+- Calculate both values for first 100 natural numbers
+- Find sum of squares (1² + 2² + ... + 100²)
+- Find square of sum (1 + 2 + ... + 100)²
+- Calculate their difference
+
+3. **Expected Output**
+- A single number representing the difference
+- Must be positive (larger minus smaller)
+
