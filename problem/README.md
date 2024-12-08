@@ -428,3 +428,38 @@ Find the difference between the sum of the squares of the first one hundred natu
 - A single number representing the difference
 - Must be positive (larger minus smaller)
 
+## Solutions
+
+### Simple Solution (Beginner-Friendly)
+```python
+def sum_square_difference_simple(n):
+    # Calculate sum of squares
+    sum_of_squares = sum(i**2 for i in range(1, n+1))
+    
+    # Calculate square of sum
+    sum_of_numbers = sum(range(1, n+1))
+    square_of_sum = sum_of_numbers**2
+    
+    return square_of_sum - sum_of_squares
+
+# Calculate for first 100 numbers
+print(sum_square_difference_simple(100))
+```
+
+### Optimized Solution
+```python
+def sum_square_difference_optimized(n):
+    # Using mathematical formulas:
+    # Sum of first n numbers = n(n+1)/2
+    # Sum of squares of first n numbers = n(n+1)(2n+1)/6
+    
+    sum_of_numbers = n * (n + 1) // 2
+    square_of_sum = sum_of_numbers * sum_of_numbers
+    
+    sum_of_squares = n * (n + 1) * (2 * n + 1) // 6
+    
+    return square_of_sum - sum_of_squares
+
+# Calculate for first 100 numbers
+print(sum_square_difference_optimized(100))
+```
