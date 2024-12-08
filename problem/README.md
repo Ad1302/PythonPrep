@@ -463,3 +463,29 @@ def sum_square_difference_optimized(n):
 # Calculate for first 100 numbers
 print(sum_square_difference_optimized(100))
 ```
+
+---
+
+# Problem 7: 10001st Prime
+
+## Question
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+What is the 10001st prime number?
+
+## Explanation
+
+1. **Understanding Prime Numbers**
+- Prime numbers are natural numbers greater than 1 that are only divisible by 1 and themselves
+- The sequence starts: 2, 3, 5, 7, 11, 13, ...
+- Example shows first 6 primes to demonstrate the concept
+
+2. **Main Task**
+- Generate prime numbers in sequence
+- Keep track of how many primes we've found
+- Continue until we reach the 10001st prime
+- Return that specific prime number
+
+3. **Expected Output**
+- A single number that is:
+  - A prime number
+  - The 10001st prime in the sequence
